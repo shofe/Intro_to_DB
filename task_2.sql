@@ -6,8 +6,8 @@ CREATE TABLE IF NOT EXISTS Authors (
 );
 
 CREATE TABLE IF NOT EXISTS Books (
-    BOOK_ID INT AUTO_INCREMENT PRIMARY KEY,
-    TITLE VARCHAR(130) NOT NULL,
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(130) NOT NULL,
     author_id INT,
     price DOUBLE,
     publication_date DATE,
