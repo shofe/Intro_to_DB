@@ -1,5 +1,18 @@
 import mysql.connector
 
+# Step 1: Connect to MySQL server (without specifying a database)
+server_connection = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Shofunlayo@21"
+)
+
+server_cursor = server_connection.cursor()
+server_cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
+server_cursor.close()
+server_connection.close()
+
+# Step 2: Now connect to the newly created database
 alx_book_store = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -8,6 +21,7 @@ alx_book_store = mysql.connector.connect(
 )
 
 mycursor = alx_book_store.cursor()
+
 
 """Creating the author's table"""
 mycursor.execute("""
